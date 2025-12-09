@@ -603,3 +603,45 @@ section {
     font-size: 3.5rem;
   }
 }
+/* --- MOBILE MENU (PURE CSS) --- */
+
+/* 1. Hide the checkbox itself */
+#check {
+    display: none;
+}
+
+/* 2. Style the Menu Icon (Label) */
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none; /* Hidden on desktop */
+}
+
+/* 3. Mobile Response Updates */
+@media (max-width: 768px) {
+    /* Show the menu icon on mobile */
+    .icons {
+        display: inline-flex;
+    }
+
+    /* Logic: If checkbox is checked, show the navbar */
+    #check:checked ~ .navbar {
+        display: flex;
+    }
+
+    /* Ensure navbar is hidden by default on mobile */
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(31, 36, 45, 0.98);
+        border-top: 2px solid rgba(0, 238, 255, 0.2);
+        padding: 1rem 3%;
+    }
+}
